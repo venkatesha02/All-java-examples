@@ -1,0 +1,75 @@
+<%@page import="java.util.List"%>
+<%@page import="com.tyss.empspringmvc.dto.EmployeeInfoBean"%>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+</head>
+<%
+	EmployeeInfoBean bean = (EmployeeInfoBean) session.getAttribute("bean");
+%>
+<body>
+
+	<%
+		if (bean.getRole().equals("admin")) {
+	%>
+	<a href="register" style="text-decoration: none">Add Employee</a>
+	<%
+		}
+	%>
+	<a href="./change-password" style="text-decoration: none">Change Password</a>
+	<a href="./logout" style="float: right;text-decoration: none" >Logout</a>
+	<h1>
+		Welcome
+		<%=bean.getName()%>
+	</h1>
+
+	<form action="./search">
+		<input type="text" name="name" placeholder="Enter the Name....." /> <input
+			type="submit" value="Search" />
+
+
+	</form>
+	<%
+		List<EmployeeInfoBean> beans = (List<EmployeeInfoBean>) request.getAttribute("beans");
+	%>
+	<%
+		if (beans != null) {
+
+			if (beans.isEmpty()) {
+	%>
+	<h3 style="color: red;">Data Not Found for that Name</h3>
+	<%
+		} else {
+	%>
+	<table border="1" >
+		<tr>
+		
+			<th>Name</th>
+			<th>Email</th>
+			<th>Mobile</th>
+			<th>Role</th>
+			
+		</tr>
+
+		<%
+			for (EmployeeInfoBean infoBean : beans) {
+		%>
+		<tr>
+		
+			<td><%=infoBean.getName()%></td>
+			<td><%=infoBean.getEmail()%></td>
+			<td><%=infoBean.getMobile()%></td>
+			<td><%=infoBean.getRole()%></td>
+			
+		</tr>
+		<%
+			}
+		%>
+	</table>
+	<%
+		}
+		}
+	%>
+</body>
+</html>
