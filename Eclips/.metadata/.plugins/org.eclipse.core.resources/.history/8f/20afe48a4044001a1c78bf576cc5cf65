@@ -1,0 +1,5 @@
+package com.tyss.hibernateapp.dto;
+
+public class EmpPrimary {
+
+}

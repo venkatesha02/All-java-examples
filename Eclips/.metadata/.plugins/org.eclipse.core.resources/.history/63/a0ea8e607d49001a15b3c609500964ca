@@ -1,0 +1,32 @@
+package com.tyss.junittest;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.RepetitionInfo;
+import org.junit.jupiter.api.Test;
+
+class MyFriendsTest {
+
+	static MyFriends my = null;
+
+	@BeforeAll
+	static void beforeAll() {
+		my = new MyFriends();
+	}
+
+	
+	@Test
+	void getNameTest(RepetitionInfo info) {
+
+		int i = info.getCurrentRepetition();
+		String actual = my.getName();
+		if(i <= 4) {
+			assertNotNull(actual);
+		}else {
+			
+		}
+		
+	}
+
+}

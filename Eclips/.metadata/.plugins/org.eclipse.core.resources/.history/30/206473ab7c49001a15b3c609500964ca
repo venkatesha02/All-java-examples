@@ -1,0 +1,20 @@
+package com.tyss.junittest;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+class MyFriendsTest {
+
+	private MyFriends my ;
+	
+	@BeforeAll
+	public void beforeAll() {
+		my = new MyFriends();
+	}
+	@Test
+	void getNameTest() {
+
+		
+	}
+
+}

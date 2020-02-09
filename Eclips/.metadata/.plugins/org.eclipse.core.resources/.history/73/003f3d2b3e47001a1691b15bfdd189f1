@@ -1,0 +1,37 @@
+<%@page import="java.util.List"%>
+<%@page import="com.tyss.empspringmvc.dto.EmployeeInfoBean"%>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+</head>
+	<%
+		EmployeeInfoBean bean = (EmployeeInfoBean) session.getAttribute("bean");
+	%>
+<body>
+
+	<%
+		if (bean.getRole().equals("admin")) {
+	%>
+	<a href="#">Add Employee</a>
+	<%
+		}
+	%>
+	<a href="./change-password">Change Password</a>
+	<a href="./logout" style="float: right;">Logout</a>
+	<h1>
+		Welcome
+		<%=bean.getName()%>
+	</h1>
+
+	<form action="">
+		<input type="text" name="name" placeholder="Enter the Name....." /> <input
+			type="submit" value="Search" />
+			
+			
+	</form>
+	<%
+		List<EmployeeInfoBean> beans = (List<EmployeeInfoBean>)request.getAttribute("beans");
+	%>
+</body>
+</html>

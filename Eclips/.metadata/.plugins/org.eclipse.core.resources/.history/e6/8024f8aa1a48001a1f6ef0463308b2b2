@@ -1,0 +1,42 @@
+package com.tyss.productrestapi.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.tyss.productrestapi.dao.ProductDao;
+import com.tyss.productrestapi.dto.ProductInfoBean;
+import com.tyss.springrest.dao.EmployeeDao;
+
+public class ProductServiceImpl implements ProductService {
+
+	
+	@Autowired
+	private ProductDao dao;
+	@Override
+	public boolean addProduct(ProductInfoBean bean) {
+		return false;
+	}
+
+	@Override
+	public boolean updateProduct(int id, String productName) {
+		return false;
+	}
+
+	@Override
+	public List<ProductInfoBean> search(String productName) {
+		return null;
+	}
+
+	@Override
+	public boolean deleteProduct(int id) {
+		return false;
+	}
+
+	@Override
+	public List<ProductInfoBean> getAllProduct() {
+		return null;
+	}
+	
+
+}

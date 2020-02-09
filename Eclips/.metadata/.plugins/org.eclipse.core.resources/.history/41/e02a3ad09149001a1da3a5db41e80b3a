@@ -1,0 +1,42 @@
+package com.tyss.junittest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class BMICalulaterTest {
+
+	@Test
+	void getBmiResultOverWeightTest() {
+		BMICalculater bmi = new BMICalculater();
+		String actual = bmi.getBmiResult(36.2);
+		assertEquals("Obesity", actual);
+
+	}
+	
+	
+	@Test
+	void getBmiResultNormalTest() {
+		BMICalculater bmi = new BMICalculater();
+		String actual = bmi.getBmiResult(36.2);
+		assertEquals("Obesity", actual);
+
+	}
+	
+	@Test
+	void getBmiResultUnderWeightTest() {
+		BMICalculater bmi = new BMICalculater();
+		String actual = bmi.getBmiResult(36.2);
+		assertEquals("Obesity", actual);
+
+	}
+	
+	@Test
+	void getBmiResultObesityTest() {
+		BMICalculater bmi = new BMICalculater();
+		String actual = bmi.getBmiResult(36.2);
+		assertEquals("Obesity", actual);
+
+	}
+
+}

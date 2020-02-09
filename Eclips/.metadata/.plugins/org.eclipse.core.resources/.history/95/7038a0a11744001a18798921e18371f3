@@ -1,0 +1,12 @@
+package com.tyss.springcore;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class BookConfigApp {
+
+	public static void main(String[] args) {
+
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+	}
+
+}

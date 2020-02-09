@@ -1,0 +1,5 @@
+package com.tyss.empspringmvc.config;
+
+public class ORMConfig {
+
+}

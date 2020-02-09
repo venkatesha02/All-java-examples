@@ -1,0 +1,14 @@
+package com.tyss.springcore;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.tyss.springcoreconfig.SpringConfig;
+
+public class AnnotationComponentScanApp {
+
+	public static void main(String[] args) {
+
+		AnnotationConfigApplicationContext context =  new AnnotationConfigApplicationContext(SpringConfig.class);
+	}
+
+}

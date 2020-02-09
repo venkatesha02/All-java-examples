@@ -1,0 +1,45 @@
+package com.tyss.junittest;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.stream.Stream;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+class SimpleCalTest {
+
+//	@Test
+//	@ParameterizedTest
+//	@MethodSource("getResult")
+//	void getDivResult(int a ,int b, int values) {
+//		SimpleCal cal = new SimpleCal();
+//		int actual = cal.division(a, b);
+//		System.out.println(actual);
+//		assertEquals(values, actual);
+//		
+//	}
+//	
+//	static Stream<Arguments> getResult(){	
+//		return Stream.of(Arguments.arguments(5,5),
+//				Arguments.arguments(20,62),
+//				Arguments.arguments(20,62)	
+//				);
+//	}
+	
+	@Test
+	void divByZero() {
+		SimpleCal cal = new SimpleCal();
+		int i = cal.division(20, 0);
+		assertEquals(0, i);
+	}
+	
+	@Test
+	void divPositiveTest() {
+		SimpleCal cal = new  SimpleCal();
+		int i = cal.division(15, 0);
+		assertEquals(2, i);
+	}
+}

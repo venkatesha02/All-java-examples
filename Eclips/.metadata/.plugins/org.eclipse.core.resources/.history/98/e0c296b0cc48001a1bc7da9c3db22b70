@@ -1,0 +1,21 @@
+package com.tyss.springbootproduct.dao;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+
+import com.tyss.springbootproduct.dto.ProductInfo;
+
+
+public class ProductDaoImpl implements ProductDao{
+
+	@PersistenceUnit
+	private EntityManagerFactory factory;
+	
+	@Override
+	public boolean addProduct(ProductInfo info) {
+		
+		return false;
+	}
+
+	
+}

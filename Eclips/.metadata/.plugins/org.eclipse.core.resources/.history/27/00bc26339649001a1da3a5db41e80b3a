@@ -1,0 +1,15 @@
+package com.tyss.junittest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class SimpleCalTest {
+
+	@Test
+	void getDivResult() {
+		
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BMICalulaterTest" project="junit-test" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.tyss.junittest.BMICalulaterTest" time="0.004" displayname="BMICalulaterTest" uniqueid="[engine:junit-jupiter]/[class:com.tyss.junittest.BMICalulaterTest]">
+    <testcase name="getBmiResultUnderWeightTest" classname="com.tyss.junittest.BMICalulaterTest" time="0.003" displayname="getBmiResultUnderWeightTest()" uniqueid="[engine:junit-jupiter]/[class:com.tyss.junittest.BMICalulaterTest]/[method:getBmiResultUnderWeightTest()]"/>
+    <testcase name="getBmiResultNormalTest" classname="com.tyss.junittest.BMICalulaterTest" time="0.0" displayname="getBmiResultNormalTest()" uniqueid="[engine:junit-jupiter]/[class:com.tyss.junittest.BMICalulaterTest]/[method:getBmiResultNormalTest()]"/>
+    <testcase name="getBmiResultOverWeightTest" classname="com.tyss.junittest.BMICalulaterTest" time="0.0" displayname="getBmiResultOverWeightTest()" uniqueid="[engine:junit-jupiter]/[class:com.tyss.junittest.BMICalulaterTest]/[method:getBmiResultOverWeightTest()]"/>
+    <testcase name="getBmiResultObesityTest" classname="com.tyss.junittest.BMICalulaterTest" time="0.001" displayname="getBmiResultObesityTest()" uniqueid="[engine:junit-jupiter]/[class:com.tyss.junittest.BMICalulaterTest]/[method:getBmiResultObesityTest()]"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,18 @@
+package com.tyss.springrest.service;
+
+import java.util.List;
+
+import com.tyss.springrest.dto.EmployeeInfoBean;
+
+public interface EmployeeService {
+
+	public EmployeeInfoBean auth(String email, String password); 
+
+	public boolean register(EmployeeInfoBean bean);
+
+	public boolean changePassword(int id, String password);
+
+	public List<EmployeeInfoBean> search(String name);
+
+	public boolean delete(int id);
+}

@@ -1,0 +1,29 @@
+package com.tyss.junittest;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.RepetitionInfo;
+import org.junit.jupiter.api.Test;
+
+class MyFriendsTest {
+
+	static MyFriends my = null;
+
+	@BeforeAll
+	static void beforeAll() {
+		my = new MyFriends();
+	}
+
+	
+	@Test
+	void getNameTest(RepetitionInfo info) {
+
+		String actual = my.getName();
+		if(true) {
+			
+		}else {
+			
+		}
+		
+	}
+
+}

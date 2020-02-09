@@ -1,0 +1,7 @@
+package com.tyss.junittest;
+
+public class BMICalculater {
+public double calculateBmi(double height,double weight) {
+	return weight/(height*height);
+}
+}

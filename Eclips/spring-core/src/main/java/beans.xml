@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    
+    <bean id="hello" class ="com.tyss.springcore.beans.Hello" 
+    init-method="init" destroy-method="destroy"  > <!-- scope="prototype" -->
+    	
+    	<!-- <property name="message" value = "I kill Java"/> -->
+    	
+    	<constructor-arg name="message" value="I like Python"/>
+    	
+    	<property name="map">
+    		<map>
+    			<entry key="1" value ="One"></entry>
+    			<entry key="2" value ="Two"></entry>
+    			<entry key="3" value ="Three"></entry>
+    			<entry key="4" value ="Four"></entry>
+    		</map>
+    	</property>
+    	 
+    	<property name="list">
+    		<list>
+    			<value>1</value>
+    			<value>2</value>
+    			<value>3</value>
+    			<value>4</value>
+    			<value>5</value>
+    			<value>6</value>
+    		</list>
+    	</property>
+    	    	
+    </bean>
+    
+    <bean id="animal" class="com.tyss.springcore.beans.Dog"/>
+    
+    <bean id="cat" class="com.tyss.springcore.beans.Cat" primary="true"/>
+    
+    <bean id="beanPostProcessor" class="com.tyss.springcore.beans.BeanPostProcessorImpl"/>
+    
+    <bean id="beanFactoryPostProcessor" class = "com.tyss.springcore.beans.BeanFactoryPostProcessorImpl"/>
+    
+    <bean id ="pet" class="com.tyss.springcore.beans.Pet" autowire="byName">
+    	<property name="name" value="Browni"/> 
+    	<!-- <property name="animal" ref="dog"/> --> <!-- here ref value is id of bean i.e dog ,cat,or anything -->
+    	<!-- <constructor-arg name="name" value="Browni"/> -->
+    	<!-- <constructor-arg name="animal" ref="dog"/> -->
+    </bean>
+    
+    
+</beans>

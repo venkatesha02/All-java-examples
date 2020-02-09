@@ -1,0 +1,11 @@
+package com.tyss.springcoreconfig;
+
+import com.tyss.springcore.beans.Author;
+
+public class BookConfig {
+
+	public Author setAuthor() {
+		return new Author();
+	}
+	
+}

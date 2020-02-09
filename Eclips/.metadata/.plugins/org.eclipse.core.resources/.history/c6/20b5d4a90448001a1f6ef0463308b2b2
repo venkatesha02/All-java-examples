@@ -1,0 +1,61 @@
+package com.tyss.springrest.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tyss.springrest.dto.EmployeeInfoBean;
+import com.tyss.springrest.service.EmployeeService;
+
+@RestController
+public class EmployeeRestController {
+	
+	@Autowired
+	public EmployeeService service;
+	
+	@GetMapping(path="/search", 
+			produces=MediaType.APPLICATION_JSON_VALUE)
+	//@ResponseBody  : its specifies there is no any jsp code for view. this methos itself that body.
+	public List<EmployeeInfoBean> search(@RequestParam("name")String name) {
+		List<EmployeeInfoBean> bean = service.search(name);
+		return bean;
+		
+	}
+	
+	@PostMapping(path="/register", 
+			produces = MediaType.APPLICATION_JSON_VALUE, 
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	public boolean register(@RequestBody EmployeeInfoBean bean) {
+		return service.register(bean);
+		
+	}
+	
+	@PostMapping(path="/auth", 
+			produces = MediaType.APPLICATION_JSON_VALUE,
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	public EmployeeInfoBean auth(@RequestBody EmployeeInfoBean bean) {
+		return service.auth(bean.getEmail(), bean.getPassword());
+	}
+	
+	@PostMapping(path = "/change-password", 
+			produces = MediaType.APPLICATION_JSON_VALUE,
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	public boolean changePassword(@RequestBody EmployeeInfoBean bean) {
+		return service.changePassword(bean.getId(), bean.getPassword());
+		
+	}
+	
+	@DeleteMapping(path = "/delete", 
+			produces = MediaType.APPLICATION_JSON_VALUE,
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	public boolean deleteEmployee(int id) {
+		return service.delete(id);
+	}
+}// end of class

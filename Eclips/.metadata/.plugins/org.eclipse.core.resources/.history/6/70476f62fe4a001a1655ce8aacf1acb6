@@ -1,0 +1,16 @@
+package com.tyss.jdbcapp.common;
+
+public class TestB {
+
+	public static String reverseWord(String str) {
+		return null;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+
+		
+	}
+
+}

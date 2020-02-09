@@ -1,0 +1,29 @@
+package com.tyss.jdbcapp.common;
+
+public class TestB {
+
+	public static String reverseWord(String str) {
+		String word[] = str.split(" ");
+		String result = "";
+		//System.out.println("this is split "+word);
+		/*
+		 * for (int i = 0; i < word.length; i++) { System.out.print(word[i] +" ");
+		 * 
+		 * }
+		 */
+		for (int i = word.length ; i >= 0; i--) {
+
+			result = result + word[i]+" ";
+		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+
+		String input = "Hello this is venki";
+		String s = reverseWord(input);
+		System.out.println(input);
+		System.out.println(s);
+	}
+
+}

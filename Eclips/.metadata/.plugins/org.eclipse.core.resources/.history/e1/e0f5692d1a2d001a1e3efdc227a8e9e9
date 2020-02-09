@@ -1,0 +1,8 @@
+package com.testyantra.shopping.dao;
+
+import com.testyantra.shopping.bean.ProductBean;
+
+public interface ShoppingDAO {
+
+	public boolean addProduct(ProductBean productBean);
+}

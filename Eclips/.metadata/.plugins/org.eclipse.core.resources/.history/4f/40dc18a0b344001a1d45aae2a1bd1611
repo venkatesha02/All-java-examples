@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<%@page import="java.util.Date"%>
+<%! private int i = 10; %>
+<html>
+<head>
+<title>My First JSP</title>
+</head>
+<body>
+
+	<%
+		Date date = new Date();
+		try {
+
+		} catch (Exception e) {
+
+		}
+	%>
+	<h1 style="color: pink;"><%=date%></h1>
+
+</body>
+</html>

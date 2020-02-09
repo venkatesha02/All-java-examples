@@ -1,0 +1,99 @@
+package com.tyss.empspringmvc.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.tyss.empspringmvc.dto.EmployeeInfoBean;
+
+import lombok.extern.java.Log;
+
+@Log
+public class EmployeeDaoImpl implements EmployeeDao{
+
+	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("employee-unit");
+	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();//
+
+	@Override
+	public EmployeeInfoBean auth(String email, String password) {
+
+		String jpql = "select e from EmployeeInfoBean e where e.email=:email";
+		EntityManager manager = factory.createEntityManager();
+		TypedQuery<EmployeeInfoBean> query = manager.createQuery(jpql,EmployeeInfoBean.class);
+		query.setParameter("email", email)
+		try {
+
+			EmployeeInfoBean bean =  query.getSingleResult();
+			if(encoder.matches(password, bean.getPassword())) {
+				return bean;
+			}else {
+				return null;
+			}
+
+		}catch (Exception e) {
+			log.info(e.getMessage());
+			for (StackTraceElement element : e.getStackTrace()) {
+				log.info(element.toString());
+			}
+			return null;
+		}
+
+	}
+
+	@Override
+	public boolean register(EmployeeInfoBean bean) {
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		try {
+			//String password = bean.getPassword();// getting the password from database
+			//String encoderPassword =encoder.encode(password);// encoding the user password 
+			//bean.setPassword(encoder.encode(encoderPassword));// setting to the database
+			//encoder.encode(bean.getPassword());
+			bean.setPassword(encoder.encode(bean.getPassword()));
+			
+			manager.persist(bean);
+			transaction.commit();
+			return true;
+
+		} catch (Exception e) {
+			log.info(e.getMessage());
+			for (StackTraceElement element : e.getStackTrace()) {
+				log.info(element.toString());
+			}
+			return false;
+		}
+	}
+
+	@Override
+	public void changePassword(int id, String password) {
+
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		EmployeeInfoBean bean = manager.find(EmployeeInfoBean.class, id);
+		bean.setPassword(encoder.encode(password));
+		manager.persist(bean);
+		transaction.commit();
+
+	}
+
+	@Override
+	public List<EmployeeInfoBean> search(String name) {
+
+		EntityManager manager = factory.createEntityManager();
+		String jpql = "select e from EmployeeInfoBean e where e.ename=:name";
+
+		TypedQuery< EmployeeInfoBean> query = manager.createQuery(jpql,EmployeeInfoBean.class);
+		query.setParameter("name", name);
+		return query.getResultList();
+
+	}
+
+}

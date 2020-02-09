@@ -1,0 +1,5 @@
+package com.tyss.productrestapi.dao;
+
+public class ProductDaoImpl {
+
+}

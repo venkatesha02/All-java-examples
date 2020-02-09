@@ -1,0 +1,13 @@
+package com.tyss.productrestapi.dao;
+
+import org.springframework.stereotype.Repository;
+
+import lombok.extern.java.Log;
+
+@Log
+@Repository
+public class ProductDaoImpl implements ProductDao {
+
+	
+	
+}

@@ -1,0 +1,69 @@
+package com.tyss.productrestapi.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tyss.productrestapi.dto.ProductInfoBean;
+import com.tyss.productrestapi.dto.ProductResponse;
+import com.tyss.productrestapi.service.ProductService;
+
+@RestController
+public class ProductRestController {
+
+	@Autowired
+	private ProductService service;
+
+	@GetMapping(path="/search", 
+			produces=MediaType.APPLICATION_JSON_VALUE)
+	public ProductResponse search(@RequestParam("productName")String productName) {
+		
+		List<ProductInfoBean> bean = service.search(productName);
+		ProductResponse response = new ProductResponse();
+		if(bean!=null && !bean.isEmpty()) {
+
+			response.setStatusCode(201);
+			response.setMessage("Success");
+			response.setDescription("Data found in DB for the Requested Name");
+			response.setBeans(bean);
+
+		}else {
+			response.setStatusCode(401);
+			response.setMessage("Failure");
+			response.setDescription("Data Not found in DB for the Requested Name");
+
+		}
+		return response;
+	}
+	
+	@PostMapping(path="/add-product", 
+			produces = MediaType.APPLICATION_JSON_VALUE, 
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ProductResponse register(@RequestBody ProductInfoBean bean) {
+		ProductResponse response = new ProductResponse();
+		if(service.addProduct(bean)) {
+			response.setStatusCode(201);
+			response.setMessage("Success");
+			response.setDescription("Data Inserted in DB");
+			
+		}else {
+			
+			response.setStatusCode(401);
+			response.setMessage("Failure");
+			response.setDescription("Data Not inserted in DB ");
+			
+		}
+		return response;
+		
+	}
+	
+	
+	
+
+}

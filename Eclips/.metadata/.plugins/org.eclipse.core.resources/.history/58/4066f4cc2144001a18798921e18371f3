@@ -1,0 +1,20 @@
+package com.tyss.springcore;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.tyss.springcore.beans.Book;
+import com.tyss.springcoreconfig.SpringBookConfig;
+
+public class AnnotationBookComponentScanApp {
+
+	public static void main(String[] args) {
+
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringBookConfig.class);
+		
+		Book book = context.getBean(Book.class);
+		System.out.println(book.getName());
+		System.out.println(book.getAuthor().getName());
+
+	}
+
+}

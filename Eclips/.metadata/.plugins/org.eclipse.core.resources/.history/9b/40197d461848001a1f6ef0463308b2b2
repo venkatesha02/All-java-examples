@@ -1,0 +1,77 @@
+package com.tyss.productrestapi.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceUnit;
+import javax.persistence.TypedQuery;
+
+import org.springframework.stereotype.Repository;
+
+import com.tyss.productrestapi.dto.ProductInfoBean;
+import com.tyss.springrest.dto.EmployeeInfoBean;
+
+import lombok.extern.java.Log;
+
+@Log
+@Repository
+public class ProductDaoImpl implements ProductDao {
+	
+	@PersistenceUnit
+	private EntityManagerFactory factory;
+	
+	@Override
+	public boolean addProduct(ProductInfoBean bean) {
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		try {		
+			manager.persist(bean);
+			transaction.commit();
+			return true;
+
+		} catch (Exception e) {
+			log.info(e.getMessage());
+			for (StackTraceElement element : e.getStackTrace()) {
+				log.info(element.toString());
+			}
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updateProduct(int id, String productName) {
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		ProductInfoBean bean = manager.find(ProductInfoBean.class, id);
+		bean.setProductName(productName);
+		manager.persist(bean);
+		transaction.commit();
+		return true;
+	}
+
+	@Override
+	public List<ProductInfoBean> search(String productName) {
+		EntityManager manager = factory.createEntityManager();
+		String jpql = "select e from EmployeeInfoBean e where e.name=:name";
+
+		TypedQuery<ProductInfoBean> query = manager.createQuery(jpql,ProductInfoBean.class);
+		query.setParameter("name", name);
+		return query.getResultList();
+	}
+
+	@Override
+	public boolean deleteProduct(int id) {
+		return false;
+	}
+
+	@Override
+	public ProductInfoBean getAllProduct() {
+		return null;
+	}
+
+		
+}// end of class

@@ -1,0 +1,10 @@
+package com.tyss.empspringmvc.config;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class ORMConfig {
+
+	
+	
+}

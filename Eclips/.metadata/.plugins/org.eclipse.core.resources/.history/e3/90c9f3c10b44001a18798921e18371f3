@@ -1,0 +1,24 @@
+package com.tyss.springcore.beans;
+
+import lombok.Data;
+
+@Data
+public class Author {
+
+	private String name;
+	private String penName;
+	
+	public Author() {
+		System.out.println("Author constructor executed");
+	}
+
+	public Author(String name, String penName) {
+		super();
+		this.name = name;
+		this.penName = penName;
+		System.out.println("Hello");
+	}
+	
+	
+	
+}

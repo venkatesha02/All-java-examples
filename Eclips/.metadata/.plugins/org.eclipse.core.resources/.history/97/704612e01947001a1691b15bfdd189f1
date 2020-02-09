@@ -1,0 +1,54 @@
+package com.tyss.empspringmvc.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import com.tyss.empspringmvc.dto.EmployeeInfoBean;
+
+public class EmployeeDaoImpl implements EmployeeDao{
+
+	private EntityManagerFactory factory = Persistence.createEntityManagerFactory("employee-unit");
+	
+		
+	@Override
+	public EmployeeInfoBean auth(String email, String password) {
+		
+		String jpql = "select e from EmployeeInfoBean e where e.email=:email";
+		EntityManager manager = factory.createEntityManager();
+		TypedQuery<EmployeeInfoBean> query = manager.createQuery(jpql,EmployeeInfoBean.class);
+		try {
+			
+			EmployeeInfoBean bean =  query.getSingleResult();
+			
+			
+		}catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public boolean register(EmployeeInfoBean bean) {
+
+		return false;
+	}
+
+	@Override
+	public void changePassword(int id, String password) {
+
+		
+	}
+
+	@Override
+	public List<EmployeeInfoBean> search(String name) {
+
+		return null;
+	}
+
+}

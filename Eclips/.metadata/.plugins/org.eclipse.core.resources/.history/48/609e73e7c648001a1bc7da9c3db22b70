@@ -1,0 +1,14 @@
+package com.tyss.springbootproduct.dao;
+
+import com.tyss.springbootproduct.dto.ProductInfo;
+
+public class ProductDaoImpl implements ProductDao{
+
+	@Override
+	public boolean addProduct(ProductInfo info) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+}

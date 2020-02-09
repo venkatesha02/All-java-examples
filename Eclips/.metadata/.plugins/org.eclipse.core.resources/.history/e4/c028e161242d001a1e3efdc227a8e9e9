@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Product Adding</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Add Product </legend>
+        <form action="./addProduct" method="post">
+            <table>
+                <tr>
+                    <td>Product ID :</td>
+                    <td><input type="number" name="empId" required></td>
+                </tr>
+                <tr>
+                    <td>Product Name :</td>
+                    <td><input type="text" name="productName" required></td>
+                </tr>
+                <tr>
+                    <td>Brand Name :</td>
+                    <td><input type="number" name="brand" required></td>
+                </tr>
+                <tr>
+                    <td>Quantity :</td>
+                    <td><input type="number" name="quantity" required></td>
+                </tr>
+                <tr>
+                    <td>Price :</td>
+                    <td><input type="number" name="price" required></td>
+                </tr>
+                <tr>
+                    <td>Image :</td>
+                    <td><input type="file" name="image" required></td>
+                </tr>
+                <tr>
+                    <td>Password :</td>
+                    <td><input type="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+
+            </table>
+        </form>
+    </fieldset>
+</body>
+
+</html>

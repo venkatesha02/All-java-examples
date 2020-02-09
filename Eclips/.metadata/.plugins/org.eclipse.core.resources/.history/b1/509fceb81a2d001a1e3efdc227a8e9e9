@@ -1,0 +1,14 @@
+package com.testyantra.shopping.dao;
+
+import com.testyantra.shopping.bean.ProductBean;
+
+public class ShoppingDaoImpl implements ShoppingDAO {
+
+	@Override
+	public boolean addProduct(ProductBean productBean) {
+
+		
+		return false;
+	}
+
+}

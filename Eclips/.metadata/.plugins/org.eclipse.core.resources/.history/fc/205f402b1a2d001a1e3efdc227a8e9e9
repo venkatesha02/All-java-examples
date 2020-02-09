@@ -1,0 +1,8 @@
+package com.testyantra.shopping.dao;
+
+import com.testyanthra.employemanagement.bean.EmployeeInfoBean;
+
+public interface ShoppingDAO {
+
+	public boolean addProduct(EmployeeInfoBean employeeInfoBean);
+}

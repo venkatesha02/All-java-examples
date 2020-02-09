@@ -1,0 +1,11 @@
+package com.tyss.springbootproduct.dao;
+
+import com.tyss.springbootproduct.dto.ProductInfo;
+
+public interface ProductDao {
+
+	public boolean addProduct(ProductInfo info);
+	
+	
+	
+}

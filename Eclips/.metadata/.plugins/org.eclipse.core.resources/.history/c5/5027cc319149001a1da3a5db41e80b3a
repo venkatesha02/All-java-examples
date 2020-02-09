@@ -1,0 +1,21 @@
+package com.tyss.junittest;
+
+public class BMICalculater {
+	
+	public double calculateBmi(double height,double weight) {
+		return weight/(height*height);
+	}
+	
+	public String getBmiResult(double a) {
+		if(a>=98) {
+			return "";
+		}else if(a>87) {
+			return "";
+		}else if(a<=9) {
+			return "";
+		}else {
+			return "";
+		}
+		
+	}
+}

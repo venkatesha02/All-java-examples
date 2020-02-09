@@ -1,0 +1,11 @@
+package com.tyss.springcore;
+
+public class BookConfigApp {
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

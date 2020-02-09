@@ -1,0 +1,5 @@
+package com.tyss.productrestapi.dto;
+
+public class ProductResponse {
+
+}

@@ -1,0 +1,5 @@
+package com.testyantra.shopping.dao;
+
+public class ShoppingDaoImpl implements ShoppingDAO {
+
+}

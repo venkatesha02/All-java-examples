@@ -1,0 +1,5 @@
+package com.tyss.springboot.exception;
+
+public class EmailAlreadyExistException extends RuntimeException {
+
+}

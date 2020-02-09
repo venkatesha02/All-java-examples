@@ -1,0 +1,17 @@
+package com.tyss.jdbcapp.common;
+
+public class TestB {
+
+	public static String reverseWord(String str) {
+		String word[] = str.split("\s");
+		return null;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+
+		
+	}
+
+}

@@ -1,0 +1,6 @@
+package com.tyss.junittest;
+
+public class MyFriends {
+
+	private ArrayList<String> al = new ArrayList<s>
+}

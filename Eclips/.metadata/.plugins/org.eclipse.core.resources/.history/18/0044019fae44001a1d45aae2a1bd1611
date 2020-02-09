@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<%@page import="java.util.Date"%>
+<html>
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+	Date date - new Date();
+
+%>
+
+</body>
+</html>

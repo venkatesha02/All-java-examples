@@ -1,0 +1,77 @@
+package com.testyantra.shopping_cart.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.testyantra.shopping_cart.bean.ProductBean;
+
+public class ShoppingDaoImpl implements ShoppingDAO {
+	
+	@Override
+	public boolean addProduct(ProductBean productBean){
+
+		Connection con =null;
+		PreparedStatement pstmt = null;
+		boolean isAdded = false;
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shopping_db", "root", "root");
+
+			String query = "insert into product_info values(?,?,?,?,?)";
+			pstmt = con.prepareStatement(query);
+			//pstmt.setInt(1,productBean.getpId() );
+			pstmt.setString(1,productBean.getProductName());
+			pstmt.setString(2,productBean.getBrand());
+			pstmt.setDouble(3,productBean.getPrice());
+			pstmt.setInt(4,productBean.getQuantity());
+			pstmt.setString(5,productBean.getImage());
+			
+			//pstmt.setInt(1,productBean.getpId() );
+			//pstmt.setString(2,productBean.getProductName());
+			//pstmt.setString(3,productBean.getBrand());
+			//pstmt.setDouble(4,productBean.getPrice());
+			//pstmt.setInt(5,productBean.getQuantity());
+			//pstmt.setString(6,productBean.getImage());
+			
+			int n = pstmt.executeUpdate();
+			
+
+			//System.out.println();
+			if(n>0) {
+				isAdded = true;
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+
+		}
+
+		finally {
+
+			if(pstmt!=null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+
+					e.printStackTrace();
+				}
+			}
+			if(con!=null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+
+		}//end of try catch finally
+		return isAdded;
+	}// end of addEmployee
+
+}// end of class

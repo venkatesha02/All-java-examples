@@ -1,0 +1,22 @@
+package com.tyss.springcoreconfig;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
+
+import com.tyss.springcore.beans.Author;
+import com.tyss.springcore.beans.Book;
+
+public class BookConfig {
+	
+	@Bean
+	@Primary
+	public Author setAuthor() {
+		return new Author();
+	}
+	
+	@Bean
+	public Book seBook() {
+		return new Book();
+	}
+	
+}

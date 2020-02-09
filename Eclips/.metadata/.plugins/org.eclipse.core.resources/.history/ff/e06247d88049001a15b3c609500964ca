@@ -1,0 +1,16 @@
+package com.tyss.junittest;
+
+public class MyRestService {
+
+	public String getStudentName() {
+		
+		return "Vinay";
+		
+	}
+	
+	public String getTeacherName() {
+		
+		return "Rowdy";
+		
+	}
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/medicalstoremanagement/src/main/java/com/tyss/medicalstoremanagement/MedicalstoremanagementApplication.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.tyss.medicalstoremanagement.MedicalstoremanagementApplication"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="10&#13;&#10;'venki'&#13;&#10;12&#13;&#10;12&#13;&#10;'1995-02-02'&#13;&#10;545455&#13;&#10;'sdf'&#13;&#10;'sdf'&#13;&#10;'1995-03-05'&#13;&#10;21212&#13;&#10;20.3"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="medicalstoremanagement"/>
+</launchConfiguration>

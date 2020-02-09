@@ -1,0 +1,14 @@
+package com.tyss.springcore;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class BookConfigApp {
+
+	public static void main(String[] args) {
+
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("book.xml");
+
+		
+	}
+
+}

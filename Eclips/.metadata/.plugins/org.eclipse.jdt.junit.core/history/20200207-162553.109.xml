@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SimpleCalTest" project="junit-test" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.tyss.junittest.SimpleCalTest" time="0.116" displayname="SimpleCalTest" uniqueid="[engine:junit-jupiter]/[class:com.tyss.junittest.SimpleCalTest]">
+    <testcase name="divPositiveTest" classname="com.tyss.junittest.SimpleCalTest" time="0.09" displayname="divPositiveTest()" uniqueid="[engine:junit-jupiter]/[class:com.tyss.junittest.SimpleCalTest]/[method:divPositiveTest()]"/>
+    <testcase name="divByZero" classname="com.tyss.junittest.SimpleCalTest" time="0.026" displayname="divByZero()" uniqueid="[engine:junit-jupiter]/[class:com.tyss.junittest.SimpleCalTest]/[method:divByZero()]"/>
+  </testsuite>
+</testrun>

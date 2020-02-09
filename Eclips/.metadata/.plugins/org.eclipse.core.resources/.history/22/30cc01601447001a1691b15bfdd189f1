@@ -1,0 +1,5 @@
+package com.tyss.empspringmvc.dao;
+
+public interface EmployeeDao {
+	public void auth(String email, String password); 
+}

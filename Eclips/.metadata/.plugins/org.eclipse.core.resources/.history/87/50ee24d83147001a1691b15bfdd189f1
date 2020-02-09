@@ -1,0 +1,29 @@
+package com.tyss.empspringmvc.service;
+
+import java.util.List;
+
+import com.tyss.empspringmvc.dto.EmployeeInfoBean;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Override
+	public EmployeeInfoBean auth(String email, String password) {
+		return null;
+	}
+
+	@Override
+	public boolean register(EmployeeInfoBean bean) {
+		return false;
+	}
+
+	@Override
+	public void changePassword(int id, String password) {
+		
+	}
+
+	@Override
+	public List<EmployeeInfoBean> search(String name) {
+		return null;
+	}
+
+}

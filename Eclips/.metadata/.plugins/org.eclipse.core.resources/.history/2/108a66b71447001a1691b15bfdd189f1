@@ -1,0 +1,11 @@
+package com.tyss.empspringmvc.dto;
+
+public class EmployeeInfoBean {
+
+	String name;
+	int id;
+	String email;
+	String password;
+	String role;
+	long mobile; 
+}

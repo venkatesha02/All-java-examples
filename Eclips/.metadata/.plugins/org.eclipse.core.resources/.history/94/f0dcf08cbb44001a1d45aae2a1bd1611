@@ -1,0 +1,11 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>sorry</title>
+	</head>
+	<body>
+		<h1>This is  include.jsp</h1>
+		<jsp:include page="/index.jsp"></jsp:include>
+	</body>
+</html>

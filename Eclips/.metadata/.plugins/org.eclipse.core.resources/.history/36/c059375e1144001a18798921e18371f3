@@ -1,0 +1,25 @@
+package com.tyss.springcore.beans;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import lombok.Data;
+
+@Data
+public class Pet {
+
+	private String name;
+	
+	@Autowired
+	//@Qualifier("dog")
+	private Animal animal;
+	
+	public Pet() {}
+	
+	public Pet(String name, Animal animal) {
+		super();
+		this.name = name;
+		this.animal = animal;
+	}
+		
+}

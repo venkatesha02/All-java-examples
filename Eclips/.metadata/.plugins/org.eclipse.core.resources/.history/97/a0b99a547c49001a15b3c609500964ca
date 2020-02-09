@@ -1,0 +1,9 @@
+package com.tyss.junittest;
+
+import java.util.ArrayList;
+
+public class MyFriends {
+
+	private ArrayList<String> al = new ArrayList<String>();
+	
+}

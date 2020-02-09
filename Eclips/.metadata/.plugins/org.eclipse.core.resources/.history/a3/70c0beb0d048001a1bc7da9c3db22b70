@@ -1,0 +1,5 @@
+package com.tyss.springbootproduct.service;
+
+public class ProductServiceImpl implements ProductService {
+
+}

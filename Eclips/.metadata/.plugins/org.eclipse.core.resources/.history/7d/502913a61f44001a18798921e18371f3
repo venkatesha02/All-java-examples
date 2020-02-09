@@ -1,0 +1,21 @@
+package com.tyss.springcore.beans;
+
+import lombok.Data;
+
+@Data
+public class Book {
+
+	private String name;
+	private Author author;
+	
+	public Book() {
+		System.out.println("constructor Exicuted");
+	}
+
+	public Book(String name, Author author) {
+		super();
+		this.name = name;
+		this.author = author;
+	}
+	 
+}

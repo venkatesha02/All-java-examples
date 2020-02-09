@@ -1,0 +1,11 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+	<a href="#" >Add Employee</a>
+	<a href="#">Change Password</a>
+	<a href="#" style="float: right;">Logout</a>
+</body>
+</html>

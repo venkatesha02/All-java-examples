@@ -1,0 +1,13 @@
+package com.tyss.log4j;
+
+import org.apache.log4j.Logger;
+
+public class Demo {
+
+	static Logger log = Logger.getLogger("dimple");
+	public static void main(String[] args) {
+
+		
+	}
+
+}

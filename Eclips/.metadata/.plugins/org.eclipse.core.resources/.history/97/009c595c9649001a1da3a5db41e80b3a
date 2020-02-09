@@ -1,0 +1,26 @@
+package com.tyss.junittest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+
+class SimpleCalTest {
+
+	@ParameterizedTest
+	@MethodSource()
+	void getDivResult(int a ,int b) {
+		SimpleCal cal = new SimpleCal();
+		cal.division(a, b);
+		
+	}
+	@ParameterizedTest
+	@MethodSource("getBmiValues")
+	void getBmiResultTest(double value, String result) {
+		BMICalculater bmi = new BMICalculater();
+		String actual = bmi.getBmiResult(value);
+		assertEquals(result, actual);
+	}
+
+}

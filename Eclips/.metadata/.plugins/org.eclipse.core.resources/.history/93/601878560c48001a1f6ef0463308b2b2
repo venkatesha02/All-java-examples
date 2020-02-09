@@ -1,0 +1,13 @@
+package com.tyss.springrest.dto;
+
+import lombok.Data;
+
+@Data
+public class EmployeeResponse {
+
+	private int statusCode;
+	private String message;
+	private String description;
+	
+	
+}// end of class

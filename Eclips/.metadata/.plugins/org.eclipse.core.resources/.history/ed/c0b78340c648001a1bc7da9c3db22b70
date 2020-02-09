@@ -1,0 +1,15 @@
+package com.tyss.springbootproduct.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
+
+@Configuration
+public class ORMConfig {
+
+	public LocalEntityManagerFactoryBean getBean() {
+		LocalEntityManagerFactoryBean bean = new LocalEntityManagerFactoryBean();
+		bean.setPersistenceUnitName("product-unit");
+		return bean;
+	}
+	
+}

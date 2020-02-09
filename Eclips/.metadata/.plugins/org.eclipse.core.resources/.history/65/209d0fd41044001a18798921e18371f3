@@ -1,0 +1,18 @@
+package com.tyss.springcore;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.tyss.springcore.beans.Animal;
+
+public class XmlComponentScanApp {
+
+	public static void main(String[] args) {
+		
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Spring.xml");
+		
+		Animal animal = context.getBean(Animal.class);
+		animal.makeSound();
+		
+	}
+
+}

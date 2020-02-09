@@ -1,0 +1,14 @@
+package com.tyss.springbootproduct.service;
+
+import com.tyss.springbootproduct.dto.ProductInfo;
+
+public class ProductServiceImpl implements ProductService {
+
+	
+	@Override
+	public boolean addProduct(ProductInfo info) {
+		
+		return false;
+	}
+
+}

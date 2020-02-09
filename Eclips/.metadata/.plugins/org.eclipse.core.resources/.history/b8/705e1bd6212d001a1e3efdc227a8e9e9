@@ -1,0 +1,22 @@
+package com.testyantra.shopping.test;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.testyantra.shopping.dao.ShoppingDAO;
+import com.testyantra.shopping.dao.ShoppingDaoImpl;
+
+public class AddProductServlet extends HttpServlet {
+	
+	private ShoppingDAO dao= new ShoppingDaoImpl();
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	}// end of doPost
+
+}// end of class

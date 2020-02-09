@@ -1,0 +1,5 @@
+package com.tyss.springbootproduct.controller;
+
+public class ProductController {
+
+}
